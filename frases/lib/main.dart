@@ -71,14 +71,18 @@ class _HomeStatefulState extends State<HomeStateful> {
                   color: Colors.black,
                 ),
               ),
-              ElevatedButton(
-                onPressed: gerarFrase,
-                child: const Text(
-                  "Gerar Frase",
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: gerarFrase,
+                  child: const Text(
+                    "Gerar Frase",
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ],
