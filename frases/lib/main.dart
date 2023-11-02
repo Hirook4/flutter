@@ -27,14 +27,14 @@ class HomeStateful extends StatefulWidget {
 
 class _HomeStatefulState extends State<HomeStateful> {
   var frases = [
-    "Frase 1",
-    "Frase 2",
-    "Frase 3",
-    "Frase 4",
-    "Frase 5",
+    "Flutter é um framework de desenvolvimento com foco multiplataforma em dispositivos móveis",
+    "Flutter permite a criação de aplicações para desktop (Linux, Windows e macOS)",
+    "Flutter é um framework para desenvolver aplicativos em diferentes plataformas ao mesmo tempo com um único código.",
+    "Flutter utiliza a linguagem de programação Dart",
+    "Flutter e o Dart foram criados pela Google",
   ];
 
-  var fraseGerada = "Pressione para gerar uma frase";
+  var fraseGerada = "";
   void gerarFrase() {
     var random = Random().nextInt(frases.length); //Gera o numero
 
@@ -59,29 +59,48 @@ class _HomeStatefulState extends State<HomeStateful> {
             border: Border.all(width: 3, color: Colors.amber),
           ), */
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset("images/logo.png"),
-              Text(
-                fraseGerada,
-                textAlign: TextAlign.justify,
-                style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+                child: SizedBox(
+                  height: 120,
+                  child: Text(
+                    fraseGerada,
+                    textAlign: TextAlign.justify,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: gerarFrase,
-                  child: const Text(
-                    "Gerar Frase",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 100, 0, 25),
+                child: Text(
+                  "Clique para gerar uma frase",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: gerarFrase,
+                    child: const Text(
+                      "Gerar Frase",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
