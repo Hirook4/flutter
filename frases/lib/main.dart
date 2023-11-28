@@ -49,6 +49,7 @@ class _HomeStatefulState extends State<HomeStateful> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Frases do Dia"),
+        centerTitle: true,
         backgroundColor: Colors.blue,
       ),
       body: Center(
@@ -62,7 +63,7 @@ class _HomeStatefulState extends State<HomeStateful> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("images/logo.png"),
+              Image.asset("assets/logo.png"),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
                 child: SizedBox(

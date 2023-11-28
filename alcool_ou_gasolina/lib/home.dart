@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
     double precoAlcool = double.parse(_controllerAlcool.text);
     double precoGasolina = double.parse(_controllerGasolina.text);
 
+    // ignore: unnecessary_null_comparison
     if (precoAlcool == null || precoGasolina == null) {
       setState(() {
         _resultado = "Numero Invalido";
@@ -54,6 +55,7 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 55, 55, 55),
       ),
+      // ignore: avoid_unnecessary_containers
       body: Container(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(25),
