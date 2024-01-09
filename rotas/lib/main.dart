@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:navigation/tela_secundaria.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: TelaPrincipal(),
+  runApp(MaterialApp(
+    //Rota inicial sera o main.dart, assim nao definimos home: const TelaPrincipal(),
+    initialRoute: "/",
+    routes: {
+      // When navigating to the "/" route, build the FirstScreen widget.
+      '/': (context) => const TelaPrincipal(),
+      // When navigating to the "/second" route, build the SecondScreen widget.
+      '/secundaria': (context) => const TelaSecundaria(),
+    },
   ));
 }
 
@@ -27,12 +34,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         padding: const EdgeInsets.all(35),
         child: Column(
           children: [
+            const Text("Primeira Tela"),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TelaSecundaria()));
+                Navigator.pushNamed(context, "/secundaria");
               },
               child: const Text("Ir para segunda tela"),
             )
