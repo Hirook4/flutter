@@ -15,32 +15,10 @@ class _RadioButtonState extends State<RadioButton> {
       appBar: AppBar(
         title: const Text("Entrada de Dados"),
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Text("Masculino"),
-            Radio(
-                value: "m",
-                groupValue: _escolha,
-                onChanged: (escolha) {
-                  setState(() {
-                    _escolha = escolha!;
-                  });
-                  print(escolha);
-                }),
-            Text("Feminino"),
-            Radio(
-              value: "f",
-              groupValue: _escolha,
-              onChanged: (escolha) {
-                setState(() {
-                  _escolha = escolha!;
-                });
-                print(escolha);
-              },
-            ),
-            RadioListTile(
-              title: Text("Masculino"),
+      body: Column(
+        children: [
+          const Text("Masculino"),
+          Radio(
               value: "m",
               groupValue: _escolha,
               onChanged: (escolha) {
@@ -48,32 +26,51 @@ class _RadioButtonState extends State<RadioButton> {
                   _escolha = escolha!;
                 });
                 print(escolha);
-              },
+              }),
+          const Text("Feminino"),
+          Radio(
+            value: "f",
+            groupValue: _escolha,
+            onChanged: (escolha) {
+              setState(() {
+                _escolha = escolha!;
+              });
+              print(escolha);
+            },
+          ),
+          RadioListTile(
+            title: const Text("Masculino"),
+            value: "m",
+            groupValue: _escolha,
+            onChanged: (escolha) {
+              setState(() {
+                _escolha = escolha!;
+              });
+              print(escolha);
+            },
+          ),
+          RadioListTile(
+            title: const Text("Feminino"),
+            value: "f",
+            groupValue: _escolha,
+            onChanged: (escolha) {
+              setState(() {
+                _escolha = escolha!;
+              });
+              print(escolha);
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              print(_escolha);
+            },
+            child: const Text(
+              "Salvar",
+              style: TextStyle(fontSize: 25),
             ),
-            RadioListTile(
-              title: Text("Feminino"),
-              value: "f",
-              groupValue: _escolha,
-              onChanged: (escolha) {
-                setState(() {
-                  _escolha = escolha!;
-                });
-                print(escolha);
-              },
-            ),
-            ElevatedButton(
-              onPressed: () {
-                print(_escolha);
-              },
-              child: const Text(
-                "Salvar",
-                style: TextStyle(fontSize: 25),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
-    ;
   }
 }

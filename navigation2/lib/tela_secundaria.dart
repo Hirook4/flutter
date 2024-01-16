@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TelaSecundaria extends StatelessWidget {
 //o que sera trazido da outra tela
   String valor;

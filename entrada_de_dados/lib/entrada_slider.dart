@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class EntradaSlider extends StatefulWidget {
@@ -20,7 +18,7 @@ class _EntradaSliderState extends State<EntradaSlider> {
         title: const Text("Entrada de Dados"),
       ),
       body: Container(
-        padding: EdgeInsets.all(50),
+        padding: const EdgeInsets.all(50),
         child: Column(
           children: [
             Slider(
@@ -34,13 +32,13 @@ class _EntradaSliderState extends State<EntradaSlider> {
               onChanged: (double novoValor) {
                 setState(() {
                   valor = novoValor;
-                  label = "Valor Selecionado " + novoValor.toString();
+                  label = "Valor Selecionado $novoValor";
                 });
               },
             ),
             ElevatedButton(
               onPressed: () {
-                print("Valor = " + valor.toString());
+                print("Valor = $valor");
               },
               child: const Text("Salvar"),
             )
