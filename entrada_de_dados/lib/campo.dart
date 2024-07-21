@@ -9,7 +9,7 @@ class campo extends StatefulWidget {
 
 class _campoState extends State<campo> {
   //Instanciando controller da linha 33
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
